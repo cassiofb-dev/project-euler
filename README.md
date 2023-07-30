@@ -18,8 +18,9 @@ This repository contains my solutions for [Project Euler](https://projecteuler.n
 
 ## Usage
 
-Run in your terminal ``docker compose up -d``. The output will be a file in the same directory with txt extension.
-To use it without docker make sure you have installed the programs in the section bellow and run ``python start.py``.
+Run in your terminal ``docker compose up -d``. You can check the results on the file ``results.txt`` created on root directory or inside the programs directory with a txt file created for each program.
+
+To use it without docker make sure you have installed the programs in the section bellow and run ``python run_solutions.py``.
 
 ## Problems
 

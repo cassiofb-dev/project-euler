@@ -1,43 +1,62 @@
-import subprocess
+import sys, subprocess
 
-def run_c(program_path: str):
-    subprocess.check_output(['gcc', '-o', f"{program_path}.bin", program_path])
-    return subprocess.check_output([f"{program_path}.bin"])
+class SolutionRunner:
 
-def run_python(program_path: str):
-    return subprocess.check_output(['python', program_path])
+    def __init__(self, benchmark=False):
+        self.solved_problems = 3
+        self.ran_commands = []
+        self.benchmark = benchmark
 
-def run_javascript(program_path: str):
-    return subprocess.check_output(['node', program_path])
+    def write_output(self, program_path: str, output: str):
+        output_file = open(f"{program_path}.txt", "wb")
+        output_file.write(output)
+        output_file.close()
 
-def run_solutions():
-    SOLVED_PROBLEMS = 3
-    LANGUAGES = [
-        {
-            'extension': 'c',
-            'run': run_c,
-        },
-        {
-            'extension': 'py',
-            'run': run_python,
-        },
-        {
-            'extension': 'js',
-            'run': run_javascript,
-        },
-    ]
+        results_file = open("run_solutions.txt", "a")
+        results_file.write("----------------------------------------------------------------\n")
+        results_file.write(f"Program: {program_path}\n")
+        results_file.write(f"Output: {output}\n")
+        results_file.close()
 
-    for problem in range(1, SOLVED_PROBLEMS + 1):
-        for language in LANGUAGES:
-            extension = language.get('extension')
+    def run_c(self, program_path: str):
+        subprocess.check_output(["gcc", "-o", f"{program_path}.bin", program_path])
 
-            program_path = f"src/{problem}/{problem}.{extension}"
+        command = f"{program_path}.bin"
+        self.ran_commands.append(command)
 
-            output = language.get('run')(program_path)
+        output = subprocess.check_output(command)
 
-            file = open(f"{program_path}.txt", 'wb')
+        self.write_output(program_path, output)
 
-            file.write(output)
+    def run_python(self, program_path: str):
+        command = ["python", program_path]
+        self.ran_commands.append(command)
 
-if __name__ == '__main__':
-    run_solutions()
+        output = subprocess.check_output(command)
+
+        self.write_output(program_path, output)
+
+    def run_javascript(self, program_path: str):
+        command = ["node", program_path]
+        self.ran_commands.append(command)
+
+        output = subprocess.check_output(command)
+
+        self.write_output(program_path, output)
+
+    def run(self):
+        open("run_solutions.txt", "w").close()
+
+        for problem in range(1, self.solved_problems + 1):
+            program_path = f"src/{problem}/{problem}"
+
+            self.run_c(f"{program_path}.c")
+            self.run_python(f"{program_path}.py")
+            self.run_javascript(f"{program_path}.js")
+
+def main():
+    solutionRunner = SolutionRunner()
+    solutionRunner.run()
+
+if __name__ == "__main__":
+    main()
