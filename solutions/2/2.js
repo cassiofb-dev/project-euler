@@ -4,7 +4,7 @@ function evenFibonacciSum(limit) {
     let term_current = 1;
 
     let total = 0;
-    while(term_current <= limit) {
+    while (term_current <= limit) {
         if (term_current % 2 == 0) {
             total += term_current;
         }

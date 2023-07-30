@@ -6,7 +6,7 @@ int evenFibonacciSum(int limit) {
     int term_current = 1;
 
     int total = 0;
-    while(term_current <= limit) {
+    while (term_current <= limit) {
         if (term_current % 2 == 0) {
             total += term_current;
         }

@@ -39,7 +39,7 @@ class SolutionRunner:
         self.write_output(program_path, output)
 
     def run_java(self, program_path: str):
-        subprocess.check_output(["java", program_path])
+        subprocess.check_output(["javac", program_path])
 
         class_path = program_path[:program_path.rfind('/')]
 
@@ -77,9 +77,9 @@ class SolutionRunner:
             "hyperfine",
             "--shell=none",
             "--warmup",
-            "10",
-            "--runs",
             "100",
+            "--runs",
+            "1000",
             *self.ran_commands,
             "--export-markdown",
             "run_solutions.md",

@@ -33,30 +33,44 @@ A benchmark can be produced with ``python run_solutions.py benchmark`` the resul
 
 ## Benchmarks
 
-The benchmarks bellow were generated with [Hyperfine](https://github.com/sharkdp/hyperfine) in 10 warmups and 100 executions:
+The benchmarks bellow were generated with [Hyperfine](https://github.com/sharkdp/hyperfine) in 100 warmups and 1000 executions:
 
 | Command | Mean [ms] | Min [ms] | Max [ms] | Relative |
 |:---|---:|---:|---:|---:|
-| `src/1/1.c.bin` | 0.2 ± 0.0 | 0.1 | 0.2 | 1.00 |
-| `python src/1/1.py` | 8.6 ± 0.5 | 8.1 | 10.8 | 56.45 ± 4.06 |
-| `node src/1/1.js` | 34.9 ± 1.9 | 33.4 | 45.2 | 230.54 ± 16.28 |
-| `src/2/2.c.bin` | 0.2 ± 0.0 | 0.1 | 0.3 | 1.16 ± 0.25 |
-| `python src/2/2.py` | 8.3 ± 0.6 | 7.8 | 10.7 | 54.82 ± 4.59 |
-| `node src/2/2.js` | 34.0 ± 0.8 | 33.2 | 38.3 | 224.34 ± 11.47 |
-| `src/3/3.c.bin` | 0.2 ± 0.0 | 0.2 | 0.2 | 1.14 ± 0.07 |
-| `python src/3/3.py` | 9.0 ± 0.5 | 8.6 | 12.0 | 59.44 ± 4.30 |
-| `node src/3/3.js` | 35.2 ± 2.6 | 33.6 | 50.7 | 232.57 ± 20.48 |
+| `solutions/1/1.c.bin` | 0.2 ± 0.0 | 0.1 | 0.5 | 1.04 ± 0.29 |
+| `solutions/1/1.rs.bin` | 0.3 ± 0.0 | 0.2 | 0.7 | 1.82 ± 0.49 |
+| `java -cp solutions/1 Main` | 16.5 ± 0.3 | 15.9 | 22.4 | 103.19 ± 24.44 |
+| `python solutions/1/1.py` | 8.4 ± 0.9 | 7.9 | 15.9 | 52.88 ± 13.81 |
+| `node solutions/1/1.js` | 35.0 ± 1.8 | 33.7 | 52.9 | 219.12 ± 52.98 |
+| `solutions/2/2.c.bin` | 0.2 ± 0.0 | 0.1 | 0.7 | 1.00 |
+| `solutions/2/2.rs.bin` | 0.3 ± 0.0 | 0.2 | 0.9 | 1.68 ± 0.50 |
+| `java -cp solutions/2 Main` | 16.4 ± 0.2 | 15.9 | 17.5 | 102.82 ± 24.31 |
+| `python solutions/2/2.py` | 8.1 ± 0.8 | 7.8 | 15.9 | 50.97 ± 12.93 |
+| `node solutions/2/2.js` | 34.3 ± 1.8 | 33.3 | 60.9 | 214.60 ± 51.93 |
+| `solutions/3/3.c.bin` | 0.2 ± 0.0 | 0.2 | 0.5 | 1.20 ± 0.33 |
+| `solutions/3/3.rs.bin` | 0.3 ± 0.1 | 0.3 | 0.8 | 1.86 ± 0.54 |
+| `java -cp solutions/3 Main` | 16.5 ± 0.3 | 16.0 | 18.4 | 103.58 ± 24.50 |
+| `python solutions/3/3.py` | 8.9 ± 1.5 | 8.4 | 17.2 | 55.71 ± 16.20 |
+| `node solutions/3/3.js` | 35.1 ± 2.3 | 33.8 | 59.4 | 219.79 ± 53.86 |
 
 ## Credits
 
 Thanks for these awesome open source projects bellow:
 
+- [Hyperfine](https://github.com/sharkdp/hyperfine)
 - [Docker](https://github.com/docker)
 - [NodeJS](https://github.com/nodejs)
 - [Python](https://github.com/python)
+- [Java](https://github.com/openjdk/jdk)
+- [Rust](https://github.com/rust-lang/rust)
 - [GCC](https://github.com/gcc-mirror/gcc)
-- [Hyperfine](https://github.com/sharkdp/hyperfine)
 
 ## License
 
 MIT
+
+---
+
+> [Website](https://cassio-souza.pages.dev/) &nbsp;&middot;&nbsp;
+> GitHub [@cassiofb-dev](https://github.com/cassiofb-dev) &nbsp;&middot;&nbsp;
+> Twitter [@cassiofb_dev](https://twitter.com/cassiofb_dev)

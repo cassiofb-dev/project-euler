@@ -4,8 +4,8 @@
 int largestPrimeFactor(long int number) {
     int divisor = 2;
 
-    while(true) {
-        while(number % divisor == 0) {
+    while (true) {
+        while (number % divisor == 0) {
             number = number / divisor;
         }
 
