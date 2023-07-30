@@ -61,7 +61,7 @@ class SolutionRunner:
         open("run_solutions.txt", "w").close()
 
         for problem in range(1, self.solved_problems + 1):
-            program_path = f"src/{problem}/{problem}"
+            program_path = f"solutions/{problem}/{problem}"
 
             self.run_c(f"{program_path}.c")
             self.run_python(f"{program_path}.py")

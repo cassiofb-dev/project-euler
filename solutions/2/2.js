@@ -7,7 +7,7 @@ function evenFibonacciSum(limit) {
     while(term_current <= limit) {
         if (term_current % 2 == 0) {
             total += term_current;
-        } 
+        }
 
         term_current = term_a + term_b;
         term_b = term_a;
