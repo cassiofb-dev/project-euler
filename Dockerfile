@@ -2,4 +2,9 @@ FROM alpine:latest
 
 RUN apk -U upgrade
 
-RUN apk add hyperfine gcc libc-dev python3 nodejs
+RUN apk add hyperfine \
+            gcc libc-dev \
+            rust \
+            python3 \
+            openjdk17 \
+            nodejs \

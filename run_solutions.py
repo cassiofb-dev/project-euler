@@ -22,7 +22,35 @@ class SolutionRunner:
         subprocess.check_output(["gcc", "-o", f"{program_path}.bin", program_path])
 
         command = [f"{program_path}.bin"]
-        self.ran_commands.append(' '.join(command))
+        self.ran_commands.append(" ".join(command))
+
+        output = subprocess.check_output(command)
+
+        self.write_output(program_path, output)
+
+    def run_rust(self, program_path: str):
+        subprocess.check_output(["rustc", "-o", f"{program_path}.bin", program_path])
+
+        command = [f"{program_path}.bin"]
+        self.ran_commands.append(" ".join(command))
+
+        output = subprocess.check_output(command)
+
+        self.write_output(program_path, output)
+
+    def run_java(self, program_path: str):
+        subprocess.check_output(["java", program_path])
+
+        class_path = program_path[:program_path.rfind('/')]
+
+        command = [
+            "java",
+            "-cp",
+            class_path,
+            "Main",
+        ]
+
+        self.ran_commands.append(" ".join(command))
 
         output = subprocess.check_output(command)
 
@@ -30,7 +58,7 @@ class SolutionRunner:
 
     def run_python(self, program_path: str):
         command = ["python", program_path]
-        self.ran_commands.append(' '.join(command))
+        self.ran_commands.append(" ".join(command))
 
         output = subprocess.check_output(command)
 
@@ -38,7 +66,7 @@ class SolutionRunner:
 
     def run_javascript(self, program_path: str):
         command = ["node", program_path]
-        self.ran_commands.append(' '.join(command))
+        self.ran_commands.append(" ".join(command))
 
         output = subprocess.check_output(command)
 
@@ -64,6 +92,8 @@ class SolutionRunner:
             program_path = f"solutions/{problem}/{problem}"
 
             self.run_c(f"{program_path}.c")
+            self.run_rust(f"{program_path}.rs")
+            self.run_java(f"{program_path}.java")
             self.run_python(f"{program_path}.py")
             self.run_javascript(f"{program_path}.js")
 
