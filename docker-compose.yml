@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  project-euler:
+    container_name: project-euler
+    build: .
+    image: project-euler
+    working_dir: "/project-euler"
+    user: 1000:1000
+    command: python run_solutions.py
+    volumes:
+      - ./:/project-euler
