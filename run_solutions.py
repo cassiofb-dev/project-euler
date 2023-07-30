@@ -2,10 +2,10 @@ import sys, subprocess
 
 class SolutionRunner:
 
-    def __init__(self, benchmark=False):
+    def __init__(self, enable_benchmark=False):
         self.solved_problems = 3
         self.ran_commands = []
-        self.benchmark = benchmark
+        self.enable_benchmark = enable_benchmark
 
     def write_output(self, program_path: str, output: str):
         output_file = open(f"{program_path}.txt", "wb")
@@ -21,8 +21,8 @@ class SolutionRunner:
     def run_c(self, program_path: str):
         subprocess.check_output(["gcc", "-o", f"{program_path}.bin", program_path])
 
-        command = f"{program_path}.bin"
-        self.ran_commands.append(command)
+        command = [f"{program_path}.bin"]
+        self.ran_commands.append(' '.join(command))
 
         output = subprocess.check_output(command)
 
@@ -30,7 +30,7 @@ class SolutionRunner:
 
     def run_python(self, program_path: str):
         command = ["python", program_path]
-        self.ran_commands.append(command)
+        self.ran_commands.append(' '.join(command))
 
         output = subprocess.check_output(command)
 
@@ -38,11 +38,24 @@ class SolutionRunner:
 
     def run_javascript(self, program_path: str):
         command = ["node", program_path]
-        self.ran_commands.append(command)
+        self.ran_commands.append(' '.join(command))
 
         output = subprocess.check_output(command)
 
         self.write_output(program_path, output)
+
+    def run_benchmark(self):
+        output = subprocess.check_output([
+            "hyperfine",
+            "--shell=none",
+            "--warmup",
+            "10",
+            "--runs",
+            "100",
+            *self.ran_commands,
+            "--export-markdown",
+            "run_solutions.md",
+        ])
 
     def run(self):
         open("run_solutions.txt", "w").close()
@@ -54,8 +67,13 @@ class SolutionRunner:
             self.run_python(f"{program_path}.py")
             self.run_javascript(f"{program_path}.js")
 
+        if self.enable_benchmark:
+            self.run_benchmark()
+
 def main():
-    solutionRunner = SolutionRunner()
+    enable_benchmark = len(sys.argv) > 1 and sys.argv[1] == "benchmark"
+
+    solutionRunner = SolutionRunner(enable_benchmark=enable_benchmark)
     solutionRunner.run()
 
 if __name__ == "__main__":
