@@ -30,28 +30,38 @@ A benchmark can be produced with ``python run_solutions.py benchmark`` the resul
 1. Find the sum of all the multiples of $3$ or $5$ below $1000$.
 2. By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
 3. What is the largest prime factor of the number $600851475143$?
+4. Find the largest palindrome made from the product of two $3$-digit numbers.
 
 ## Benchmarks
 
-The benchmarks bellow were generated with [Hyperfine](https://github.com/sharkdp/hyperfine) in 100 warmups and 1000 executions:
+The benchmarks bellow were generated with [Hyperfine](https://github.com/sharkdp/hyperfine) in 100 warmups and 100 runs:
+
+Notes:
+
+- On question 4 the results are strange because I did unholy string manipulation
 
 | Command | Mean [ms] | Min [ms] | Max [ms] | Relative |
 |:---|---:|---:|---:|---:|
-| `solutions/1/1.c.bin` | 0.2 ± 0.0 | 0.1 | 0.5 | 1.04 ± 0.29 |
-| `solutions/1/1.rs.bin` | 0.3 ± 0.0 | 0.2 | 0.7 | 1.82 ± 0.49 |
-| `java -cp solutions/1 Main` | 16.5 ± 0.3 | 15.9 | 22.4 | 103.19 ± 24.44 |
-| `python solutions/1/1.py` | 8.4 ± 0.9 | 7.9 | 15.9 | 52.88 ± 13.81 |
-| `node solutions/1/1.js` | 35.0 ± 1.8 | 33.7 | 52.9 | 219.12 ± 52.98 |
-| `solutions/2/2.c.bin` | 0.2 ± 0.0 | 0.1 | 0.7 | 1.00 |
-| `solutions/2/2.rs.bin` | 0.3 ± 0.0 | 0.2 | 0.9 | 1.68 ± 0.50 |
-| `java -cp solutions/2 Main` | 16.4 ± 0.2 | 15.9 | 17.5 | 102.82 ± 24.31 |
-| `python solutions/2/2.py` | 8.1 ± 0.8 | 7.8 | 15.9 | 50.97 ± 12.93 |
-| `node solutions/2/2.js` | 34.3 ± 1.8 | 33.3 | 60.9 | 214.60 ± 51.93 |
-| `solutions/3/3.c.bin` | 0.2 ± 0.0 | 0.2 | 0.5 | 1.20 ± 0.33 |
-| `solutions/3/3.rs.bin` | 0.3 ± 0.1 | 0.3 | 0.8 | 1.86 ± 0.54 |
-| `java -cp solutions/3 Main` | 16.5 ± 0.3 | 16.0 | 18.4 | 103.58 ± 24.50 |
-| `python solutions/3/3.py` | 8.9 ± 1.5 | 8.4 | 17.2 | 55.71 ± 16.20 |
-| `node solutions/3/3.js` | 35.1 ± 2.3 | 33.8 | 59.4 | 219.79 ± 53.86 |
+| `solutions/1/1.c.bin` | 0.2 ± 0.0 | 0.2 | 0.4 | 1.22 ± 0.30 |
+| `solutions/1/1.rs.bin` | 0.3 ± 0.0 | 0.2 | 0.4 | 1.78 ± 0.24 |
+| `java -cp solutions/1 Main` | 16.9 ± 0.3 | 16.3 | 18.0 | 112.00 ± 8.36 |
+| `python solutions/1/1.py` | 8.2 ± 0.4 | 8.0 | 10.6 | 54.42 ± 4.60 |
+| `node solutions/1/1.js` | 34.5 ± 0.5 | 33.9 | 38.0 | 228.63 ± 16.93 |
+| `solutions/2/2.c.bin` | 0.2 ± 0.0 | 0.1 | 0.2 | 1.00 |
+| `solutions/2/2.rs.bin` | 0.3 ± 0.0 | 0.2 | 0.4 | 1.70 ± 0.20 |
+| `java -cp solutions/2 Main` | 16.7 ± 0.3 | 16.2 | 17.5 | 110.86 ± 8.21 |
+| `python solutions/2/2.py` | 8.5 ± 0.6 | 7.9 | 12.0 | 56.32 ± 5.55 |
+| `node solutions/2/2.js` | 34.5 ± 1.5 | 33.7 | 48.1 | 228.84 ± 19.23 |
+| `solutions/3/3.c.bin` | 0.3 ± 0.0 | 0.2 | 0.4 | 1.69 ± 0.21 |
+| `solutions/3/3.rs.bin` | 0.3 ± 0.1 | 0.3 | 0.6 | 2.15 ± 0.42 |
+| `java -cp solutions/3 Main` | 16.9 ± 0.3 | 16.4 | 17.7 | 111.96 ± 8.32 |
+| `python solutions/3/3.py` | 9.1 ± 0.7 | 8.5 | 12.0 | 60.06 ± 6.31 |
+| `node solutions/3/3.js` | 35.8 ± 3.0 | 34.2 | 59.1 | 237.04 ± 26.29 |
+| `solutions/4/4.c.bin` | 284.2 ± 4.4 | 278.2 | 312.1 | 1882.77 ± 139.61 |
+| `solutions/4/4.rs.bin` | 375.0 ± 9.0 | 352.6 | 395.3 | 2484.19 ± 189.72 |
+| `java -cp solutions/4 Main` | 58.1 ± 2.7 | 55.8 | 70.6 | 385.17 ± 33.21 |
+| `python solutions/4/4.py` | 174.6 ± 3.2 | 171.8 | 203.5 | 1156.93 ± 86.57 |
+| `node solutions/4/4.js` | 311.1 ± 6.2 | 303.9 | 347.1 | 2061.04 ± 155.03 |
 
 ## Credits
 
