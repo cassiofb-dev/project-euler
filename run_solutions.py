@@ -1,4 +1,4 @@
-import sys, subprocess
+import os, sys, subprocess
 
 class SolutionRunner:
 
@@ -6,6 +6,8 @@ class SolutionRunner:
         self.solved_problems = 4
         self.ran_commands = []
         self.enable_benchmark = enable_benchmark
+        self.solution_variations = ["", "_optimized"]
+        self.languages = ["c", "rust", "java", "python", "javascript"]
 
     def write_output(self, program_path: str, output: str):
         output_file = open(f"{program_path}.txt", "wb")
@@ -19,6 +21,8 @@ class SolutionRunner:
         results_file.close()
 
     def run_c(self, program_path: str):
+        if os.path.isfile(program_path) == False: return
+
         subprocess.check_output(["gcc", "-o", f"{program_path}.bin", program_path])
 
         command = [f"{program_path}.bin"]
@@ -29,6 +33,8 @@ class SolutionRunner:
         self.write_output(program_path, output)
 
     def run_rust(self, program_path: str):
+        if os.path.isfile(program_path) == False: return
+
         subprocess.check_output(["rustc", "-o", f"{program_path}.bin", program_path])
 
         command = [f"{program_path}.bin"]
@@ -39,6 +45,8 @@ class SolutionRunner:
         self.write_output(program_path, output)
 
     def run_java(self, program_path: str):
+        if os.path.isfile(program_path) == False: return
+
         subprocess.check_output(["javac", program_path])
 
         class_path = program_path[:program_path.rfind('/')]
@@ -57,6 +65,8 @@ class SolutionRunner:
         self.write_output(program_path, output)
 
     def run_python(self, program_path: str):
+        if os.path.isfile(program_path) == False: return
+
         command = ["python", program_path]
         self.ran_commands.append(" ".join(command))
 
@@ -65,6 +75,8 @@ class SolutionRunner:
         self.write_output(program_path, output)
 
     def run_javascript(self, program_path: str):
+        if os.path.isfile(program_path) == False: return
+
         command = ["node", program_path]
         self.ran_commands.append(" ".join(command))
 
@@ -73,6 +85,8 @@ class SolutionRunner:
         self.write_output(program_path, output)
 
     def run_benchmark(self):
+        if len(self.ran_commands) < 1: return
+
         output = subprocess.check_output([
             "hyperfine",
             "--shell=none",
@@ -85,17 +99,21 @@ class SolutionRunner:
             "run_solutions.md",
         ])
 
+    def run_solution(self, problem: int):
+        program_path = f"solutions/{problem}/{problem}"
+
+        for variation in self.solution_variations:
+            self.run_c(f"{program_path}{variation}.c")
+            self.run_rust(f"{program_path}{variation}.rs")
+            self.run_java(f"{program_path}{variation}.java")
+            self.run_python(f"{program_path}{variation}.py")
+            self.run_javascript(f"{program_path}{variation}.js")
+
     def run(self):
         open("run_solutions.txt", "w").close()
 
         for problem in range(1, self.solved_problems + 1):
-            program_path = f"solutions/{problem}/{problem}"
-
-            self.run_c(f"{program_path}.c")
-            self.run_rust(f"{program_path}.rs")
-            self.run_java(f"{program_path}.java")
-            self.run_python(f"{program_path}.py")
-            self.run_javascript(f"{program_path}.js")
+            self.run_solution(problem)
 
         if self.enable_benchmark:
             self.run_benchmark()
