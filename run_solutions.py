@@ -3,11 +3,10 @@ import os, sys, subprocess
 class SolutionRunner:
 
     def __init__(self, enable_benchmark=False):
-        self.solved_problems = 4
+        self.solved_problems = 5
         self.ran_commands = []
         self.enable_benchmark = enable_benchmark
         self.solution_variations = ["", "_optimized"]
-        self.languages = ["c", "rust", "java", "python", "javascript"]
 
     def write_output(self, program_path: str, output: str):
         output_file = open(f"{program_path}.txt", "wb")
