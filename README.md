@@ -32,6 +32,7 @@ A benchmark can be produced with ``python run_solutions.py benchmark`` the resul
 3. What is the largest prime factor of the number $600851475143$?
 4. Find the largest palindrome made from the product of two $3$-digit numbers.
 5. What is the smallest positive number that is evenly divisible by all of the numbers from $1$ to $20$?
+6. Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
 
 ## Benchmarks
 
@@ -43,32 +44,37 @@ Notes:
 
 | Command | Mean [ms] | Min [ms] | Max [ms] | Relative |
 |:---|---:|---:|---:|---:|
-| `solutions/1/1.c.bin` | 0.2 ± 0.0 | 0.1 | 0.3 | 1.30 ± 0.26 |
-| `solutions/1/1.rs.bin` | 0.3 ± 0.0 | 0.3 | 0.5 | 1.79 ± 0.32 |
-| `java -cp solutions/1 Main` | 16.7 ± 0.2 | 16.2 | 17.3 | 108.46 ± 16.43 |
-| `python solutions/1/1.py` | 8.5 ± 1.1 | 7.9 | 15.3 | 55.37 ± 10.96 |
-| `node solutions/1/1.js` | 35.9 ± 2.3 | 34.1 | 46.3 | 233.62 ± 38.21 |
-| `solutions/2/2.c.bin` | 0.2 ± 0.0 | 0.1 | 0.3 | 1.07 ± 0.21 |
-| `solutions/2/2.rs.bin` | 0.3 ± 0.0 | 0.2 | 0.5 | 1.73 ± 0.36 |
-| `java -cp solutions/2 Main` | 16.7 ± 0.2 | 16.2 | 17.4 | 108.46 ± 16.42 |
-| `python solutions/2/2.py` | 8.2 ± 0.6 | 7.8 | 11.1 | 53.09 ± 8.87 |
-| `node solutions/2/2.js` | 34.5 ± 1.7 | 33.8 | 50.8 | 224.90 ± 35.69 |
-| `solutions/3/3.c.bin` | 0.2 ± 0.0 | 0.2 | 0.2 | 1.16 ± 0.19 |
-| `solutions/3/3.rs.bin` | 0.3 ± 0.0 | 0.3 | 0.6 | 1.87 ± 0.36 |
-| `java -cp solutions/3 Main` | 16.7 ± 0.3 | 16.3 | 18.2 | 108.84 ± 16.54 |
-| `python solutions/3/3.py` | 8.8 ± 0.5 | 8.4 | 11.7 | 57.49 ± 9.28 |
-| `node solutions/3/3.js` | 36.0 ± 2.5 | 34.5 | 48.5 | 234.36 ± 39.04 |
-| `solutions/4/4.c.bin` | 281.2 ± 1.6 | 278.2 | 287.7 | 1831.53 ± 276.34 |
-| `solutions/4/4.rs.bin` | 376.9 ± 9.6 | 354.3 | 403.3 | 2454.82 ± 375.40 |
-| `java -cp solutions/4 Main` | 56.6 ± 1.0 | 54.9 | 61.3 | 368.34 ± 55.94 |
-| `python solutions/4/4.py` | 176.0 ± 1.7 | 172.1 | 180.7 | 1146.20 ± 173.19 |
-| `node solutions/4/4.js` | 308.1 ± 3.0 | 303.6 | 328.9 | 2006.93 ± 303.24 |
-| `solutions/4/4_optimized.c.bin` | 21.1 ± 0.4 | 20.9 | 24.9 | 137.65 ± 20.91 |
-| `solutions/5/5.c.bin` | 0.2 ± 0.0 | 0.1 | 0.4 | 1.00 |
-| `solutions/5/5.rs.bin` | 0.3 ± 0.0 | 0.2 | 0.3 | 1.70 ± 0.27 |
-| `java -cp solutions/5 Main` | 16.6 ± 0.2 | 16.2 | 17.3 | 107.99 ± 16.35 |
-| `python solutions/5/5.py` | 8.3 ± 0.7 | 8.0 | 11.6 | 54.22 ± 9.33 |
-| `node solutions/5/5.js` | 35.9 ± 3.7 | 34.3 | 59.9 | 233.51 ± 42.74 |
+| `solutions/1/1.c.bin` | 0.2 ± 0.0 | 0.2 | 0.2 | 1.00 |
+| `solutions/1/1.rs.bin` | 0.3 ± 0.0 | 0.3 | 0.5 | 1.59 ± 0.27 |
+| `java -cp solutions/1 Main` | 16.8 ± 0.2 | 16.4 | 17.5 | 97.28 ± 6.01 |
+| `python solutions/1/1.py` | 8.6 ± 1.4 | 7.9 | 16.6 | 49.91 ± 8.43 |
+| `node solutions/1/1.js` | 34.1 ± 0.4 | 33.6 | 36.8 | 198.32 ± 12.23 |
+| `solutions/2/2.c.bin` | 0.2 ± 0.1 | 0.2 | 0.6 | 1.27 ± 0.37 |
+| `solutions/2/2.rs.bin` | 0.3 ± 0.0 | 0.2 | 0.4 | 1.58 ± 0.25 |
+| `java -cp solutions/2 Main` | 16.7 ± 0.2 | 16.2 | 17.3 | 97.06 ± 6.02 |
+| `python solutions/2/2.py` | 8.4 ± 0.9 | 7.8 | 15.4 | 48.87 ± 5.78 |
+| `node solutions/2/2.js` | 34.4 ± 2.0 | 33.4 | 47.5 | 199.99 ± 16.98 |
+| `solutions/3/3.c.bin` | 0.2 ± 0.0 | 0.2 | 0.3 | 1.08 ± 0.13 |
+| `solutions/3/3.rs.bin` | 0.3 ± 0.1 | 0.3 | 0.8 | 1.88 ± 0.40 |
+| `java -cp solutions/3 Main` | 16.8 ± 0.7 | 16.2 | 21.4 | 97.63 ± 7.06 |
+| `python solutions/3/3.py` | 9.1 ± 0.7 | 8.4 | 12.4 | 53.00 ± 5.36 |
+| `node solutions/3/3.js` | 35.1 ± 2.3 | 33.8 | 52.4 | 203.84 ± 18.17 |
+| `solutions/4/4.c.bin` | 282.3 ± 4.1 | 278.2 | 309.4 | 1639.56 ± 102.15 |
+| `solutions/4/4.rs.bin` | 372.7 ± 8.5 | 354.1 | 397.4 | 2164.83 ± 140.19 |
+| `java -cp solutions/4 Main` | 56.9 ± 1.7 | 54.6 | 67.6 | 330.47 ± 22.42 |
+| `python solutions/4/4.py` | 175.4 ± 3.1 | 172.8 | 202.3 | 1018.45 ± 64.20 |
+| `node solutions/4/4.js` | 307.2 ± 4.5 | 299.2 | 339.1 | 1783.99 ± 111.25 |
+| `solutions/4/4_optimized.c.bin` | 20.9 ± 0.1 | 20.8 | 21.1 | 121.50 ± 7.37 |
+| `solutions/5/5.c.bin` | 0.2 ± 0.0 | 0.2 | 0.4 | 1.02 ± 0.15 |
+| `solutions/5/5.rs.bin` | 0.3 ± 0.0 | 0.3 | 0.6 | 1.70 ± 0.31 |
+| `java -cp solutions/5 Main` | 16.6 ± 0.3 | 16.2 | 17.7 | 96.67 ± 6.04 |
+| `python solutions/5/5.py` | 8.4 ± 0.9 | 7.9 | 16.0 | 49.01 ± 5.89 |
+| `node solutions/5/5.js` | 34.1 ± 1.4 | 33.2 | 47.7 | 198.16 ± 14.50 |
+| `solutions/6/6.c.bin` | 0.2 ± 0.0 | 0.1 | 0.3 | 1.05 ± 0.17 |
+| `solutions/6/6.rs.bin` | 0.3 ± 0.1 | 0.2 | 0.7 | 1.68 ± 0.32 |
+| `java -cp solutions/6 Main` | 16.6 ± 0.2 | 16.1 | 17.1 | 96.42 ± 5.98 |
+| `python solutions/6/6.py` | 8.0 ± 0.8 | 7.7 | 15.5 | 46.57 ± 5.25 |
+| `node solutions/6/6.js` | 34.4 ± 2.4 | 33.6 | 57.4 | 199.98 ± 18.39 |
 
 ## Credits
 
