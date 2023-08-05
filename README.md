@@ -33,7 +33,8 @@ A benchmark can be produced with ``python run_solutions.py benchmark`` the resul
 4. Find the largest palindrome made from the product of two $3$-digit numbers.
 5. What is the smallest positive number that is evenly divisible by all of the numbers from $1$ to $20$?
 6. Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
-7. What is the $10\,001$st prime number?
+7. What is the 10,001st prime number?
+8. Find the thirteen adjacent digits in the $1000$-digit number that have the greatest product. What is the value of this product?
 
 ## Benchmarks
 
