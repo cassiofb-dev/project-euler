@@ -9,11 +9,11 @@ class SolutionRunner:
         self.solution_variations = ["", "_optimized"]
 
     def write_output(self, program_path: str, output: str):
-        output_file = open(f"{program_path}.txt", "wb")
+        output_file = open(f"{program_path}.log", "wb")
         output_file.write(output)
         output_file.close()
 
-        results_file = open("run_solutions.txt", "a")
+        results_file = open("run_solutions.log", "a")
         results_file.write("----------------------------------------------------------------\n")
         results_file.write(f"Program: {program_path}\n")
         results_file.write(f"Output: {output}\n")
@@ -109,7 +109,7 @@ class SolutionRunner:
             self.run_javascript(f"{program_path}{variation}.js")
 
     def run(self):
-        open("run_solutions.txt", "w").close()
+        open("run_solutions.log", "w").close()
 
         for problem in range(1, self.solved_problems + 1):
             self.run_solution(problem)
