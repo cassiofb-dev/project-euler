@@ -27,8 +27,8 @@ class Main {
             }
         }
 
-    return -1;
-}
+        return -1;
+    }
 
     public static void main(String args[]) {
         int result = nthPrime(10001);
