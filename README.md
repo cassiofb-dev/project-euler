@@ -17,6 +17,9 @@
 
 This repository contains my solutions for [Project Euler](https://projecteuler.net/). I'll try to solve them on more than one programming language to improve and keep my problem solving and programming skills.
 
+> [!WARNING]
+> This repository will only cover the 100 first problems implementations and the others in benchmarks only. Please try to solve them yourself before searching for solutions. Also keep in mind that most of my solutions are the first thing I thought and they can be highly inefficient and be solved in another ways.
+
 ## Usage
 
 Run in your terminal ``docker compose up -d``. You can check the results on the file ``run_solutions.txt`` created on root directory or inside the programs directory with a txt file created for each program.
@@ -35,6 +38,7 @@ A benchmark can be produced with ``python run_solutions.py benchmark`` the resul
 6. Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
 7. What is the 10,001st prime number?
 8. Find the thirteen adjacent digits in the $1000$-digit number that have the greatest product. What is the value of this product?
+9. There exists exactly one Pythagorean triplet for which $a + b + c = 1000$.<br>Find the product $abc$.
 
 ## Benchmarks
 
