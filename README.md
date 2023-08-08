@@ -18,7 +18,7 @@
 This repository contains my solutions for [Project Euler](https://projecteuler.net/). I'll try to solve them on more than one programming language to improve and keep my problem solving and programming skills.
 
 > [!WARNING]
-> This repository will only cover the 100 first problems implementations and the others in benchmarks only. Please try to solve them yourself before searching for solutions. Also keep in mind that most of my solutions are the first thing I thought and they can be highly inefficient and be solved in another ways.
+> This repository will only cover the first 100 problems implementations and the others in benchmarks only. Please try to solve them yourself before searching for solutions. Also keep in mind that most of my solutions are the first thing I thought and they can be highly inefficient and be solved in another ways.
 
 ## Usage
 
@@ -50,47 +50,52 @@ Notes:
 
 | Command | Mean [ms] | Min [ms] | Max [ms] | Relative |
 |:---|---:|---:|---:|---:|
-| `solutions/1/1.c.bin` | 0.2 ± 0.0 | 0.1 | 0.2 | 1.10 ± 0.18 |
-| `solutions/1/1.rs.bin` | 0.3 ± 0.0 | 0.2 | 0.5 | 1.84 ± 0.30 |
-| `java -cp solutions/1 Main` | 17.0 ± 0.2 | 16.6 | 18.0 | 112.07 ± 10.53 |
-| `python solutions/1/1.py` | 8.5 ± 1.1 | 8.0 | 15.6 | 56.18 ± 8.88 |
-| `node solutions/1/1.js` | 34.7 ± 2.1 | 33.7 | 52.3 | 229.57 ± 25.41 |
-| `solutions/2/2.c.bin` | 0.2 ± 0.0 | 0.2 | 0.3 | 1.14 ± 0.17 |
-| `solutions/2/2.rs.bin` | 0.3 ± 0.1 | 0.2 | 0.6 | 2.12 ± 0.40 |
-| `java -cp solutions/2 Main` | 16.9 ± 0.3 | 16.2 | 18.1 | 111.54 ± 10.60 |
-| `python solutions/2/2.py` | 8.6 ± 1.0 | 7.8 | 15.5 | 57.03 ± 8.56 |
-| `node solutions/2/2.js` | 35.3 ± 2.7 | 33.5 | 48.6 | 233.34 ± 28.28 |
-| `solutions/3/3.c.bin` | 0.2 ± 0.0 | 0.2 | 0.3 | 1.19 ± 0.16 |
-| `solutions/3/3.rs.bin` | 0.3 ± 0.0 | 0.3 | 0.5 | 1.92 ± 0.30 |
-| `java -cp solutions/3 Main` | 17.0 ± 0.2 | 16.3 | 17.6 | 112.10 ± 10.53 |
-| `python solutions/3/3.py` | 9.1 ± 1.2 | 8.5 | 18.0 | 60.25 ± 9.64 |
-| `node solutions/3/3.js` | 34.5 ± 0.5 | 33.9 | 37.9 | 228.30 ± 21.48 |
-| `solutions/4/4.c.bin` | 282.4 ± 2.1 | 279.2 | 291.3 | 1867.05 ± 173.89 |
-| `solutions/4/4.rs.bin` | 373.3 ± 8.4 | 354.0 | 394.0 | 2468.21 ± 235.82 |
-| `java -cp solutions/4 Main` | 56.9 ± 1.1 | 55.4 | 64.0 | 376.29 ± 35.73 |
-| `python solutions/4/4.py` | 176.6 ± 2.0 | 172.9 | 182.0 | 1167.41 ± 109.20 |
-| `node solutions/4/4.js` | 309.6 ± 5.1 | 304.0 | 343.4 | 2047.19 ± 193.10 |
-| `solutions/4/4_optimized.c.bin` | 21.9 ± 2.7 | 20.8 | 40.5 | 144.93 ± 22.21 |
-| `solutions/5/5.c.bin` | 0.2 ± 0.0 | 0.1 | 0.3 | 1.08 ± 0.19 |
-| `solutions/5/5.rs.bin` | 0.3 ± 0.0 | 0.2 | 0.4 | 1.79 ± 0.22 |
-| `java -cp solutions/5 Main` | 17.0 ± 0.4 | 16.5 | 19.9 | 112.56 ± 10.79 |
-| `python solutions/5/5.py` | 8.2 ± 0.5 | 8.0 | 11.4 | 54.31 ± 6.05 |
-| `node solutions/5/5.js` | 34.5 ± 1.2 | 33.7 | 42.9 | 228.23 ± 22.53 |
-| `solutions/6/6.c.bin` | 0.2 ± 0.0 | 0.1 | 0.2 | 1.00 |
-| `solutions/6/6.rs.bin` | 0.3 ± 0.0 | 0.2 | 0.4 | 1.81 ± 0.30 |
-| `java -cp solutions/6 Main` | 16.9 ± 0.3 | 16.3 | 17.8 | 111.64 ± 10.53 |
-| `python solutions/6/6.py` | 9.6 ± 2.9 | 7.9 | 15.8 | 63.68 ± 20.19 |
-| `node solutions/6/6.js` | 34.5 ± 0.8 | 33.7 | 39.3 | 227.89 ± 21.89 |
-| `solutions/7/7.c.bin` | 12.7 ± 1.4 | 10.2 | 16.6 | 84.17 ± 12.14 |
-| `solutions/7/7.rs.bin` | 36.2 ± 2.5 | 34.8 | 54.3 | 239.51 ± 27.64 |
-| `java -cp solutions/7 Main` | 26.2 ± 0.7 | 25.5 | 30.7 | 173.27 ± 16.78 |
-| `python solutions/7/7.py` | 67.7 ± 2.5 | 66.6 | 91.2 | 447.90 ± 44.81 |
-| `node solutions/7/7.js` | 43.7 ± 1.2 | 42.7 | 51.3 | 289.11 ± 27.98 |
-| `solutions/8/8.c.bin` | 0.2 ± 0.0 | 0.2 | 0.5 | 1.26 ± 0.27 |
-| `solutions/8/8.rs.bin` | 76.3 ± 1.5 | 75.0 | 83.1 | 504.70 ± 47.89 |
-| `java -cp solutions/8 Main` | 21.0 ± 0.3 | 20.3 | 21.9 | 138.62 ± 13.05 |
-| `python solutions/8/8.py` | 10.4 ± 1.8 | 9.6 | 20.4 | 68.62 ± 13.26 |
-| `node solutions/8/8.js` | 36.2 ± 1.6 | 35.1 | 50.7 | 239.12 ± 24.60 |
+| `solutions/1/1.c.bin` | 0.2 ± 0.0 | 0.1 | 0.2 | 1.00 |
+| `solutions/1/1.rs.bin` | 0.3 ± 0.0 | 0.3 | 0.7 | 1.83 ± 0.33 |
+| `java -cp solutions/1 Main` | 16.7 ± 0.2 | 16.2 | 17.6 | 105.66 ± 7.86 |
+| `python solutions/1/1.py` | 8.4 ± 0.5 | 7.9 | 11.2 | 52.87 ± 5.01 |
+| `node solutions/1/1.js` | 35.2 ± 2.0 | 33.9 | 52.4 | 222.27 ± 20.51 |
+| `solutions/2/2.c.bin` | 0.2 ± 0.1 | 0.1 | 0.7 | 1.24 ± 0.41 |
+| `solutions/2/2.rs.bin` | 0.3 ± 0.0 | 0.2 | 0.4 | 1.67 ± 0.23 |
+| `java -cp solutions/2 Main` | 16.7 ± 0.3 | 16.1 | 18.4 | 105.79 ± 7.97 |
+| `python solutions/2/2.py` | 8.3 ± 0.8 | 7.7 | 15.0 | 52.20 ± 6.48 |
+| `node solutions/2/2.js` | 34.2 ± 0.7 | 33.5 | 37.3 | 216.26 ± 16.36 |
+| `solutions/3/3.c.bin` | 0.2 ± 0.0 | 0.2 | 0.4 | 1.27 ± 0.23 |
+| `solutions/3/3.rs.bin` | 0.4 ± 0.1 | 0.3 | 0.7 | 2.27 ± 0.55 |
+| `java -cp solutions/3 Main` | 16.9 ± 0.4 | 16.2 | 18.3 | 106.66 ± 8.28 |
+| `python solutions/3/3.py` | 9.1 ± 1.1 | 8.4 | 17.4 | 57.61 ± 8.36 |
+| `node solutions/3/3.js` | 35.2 ± 3.0 | 33.8 | 56.7 | 222.23 ± 24.82 |
+| `solutions/4/4.c.bin` | 281.8 ± 4.9 | 278.0 | 316.5 | 1781.25 ± 133.66 |
+| `solutions/4/4.rs.bin` | 372.2 ± 9.7 | 348.5 | 393.8 | 2352.71 ± 182.31 |
+| `java -cp solutions/4 Main` | 57.1 ± 1.5 | 55.0 | 67.2 | 360.81 ± 27.89 |
+| `python solutions/4/4.py` | 175.7 ± 1.8 | 172.4 | 182.0 | 1110.49 ± 81.81 |
+| `node solutions/4/4.js` | 308.1 ± 2.5 | 304.2 | 321.1 | 1947.35 ± 142.98 |
+| `solutions/4/4_optimized.c.bin` | 20.9 ± 0.1 | 20.7 | 21.1 | 132.15 ± 9.65 |
+| `solutions/5/5.c.bin` | 0.2 ± 0.0 | 0.2 | 0.4 | 1.12 ± 0.23 |
+| `solutions/5/5.rs.bin` | 0.3 ± 0.1 | 0.2 | 0.4 | 1.86 ± 0.38 |
+| `java -cp solutions/5 Main` | 16.9 ± 0.5 | 16.2 | 18.8 | 106.79 ± 8.32 |
+| `python solutions/5/5.py` | 8.5 ± 0.6 | 8.0 | 11.2 | 53.64 ± 5.59 |
+| `node solutions/5/5.js` | 34.1 ± 0.5 | 33.5 | 37.8 | 215.68 ± 16.04 |
+| `solutions/6/6.c.bin` | 0.2 ± 0.0 | 0.1 | 0.6 | 1.04 ± 0.32 |
+| `solutions/6/6.rs.bin` | 0.3 ± 0.0 | 0.2 | 0.5 | 1.98 ± 0.33 |
+| `java -cp solutions/6 Main` | 16.6 ± 0.2 | 16.2 | 17.2 | 105.06 ± 7.80 |
+| `python solutions/6/6.py` | 8.3 ± 0.5 | 7.8 | 10.7 | 52.16 ± 4.78 |
+| `node solutions/6/6.js` | 34.5 ± 0.9 | 33.5 | 38.6 | 218.12 ± 16.90 |
+| `solutions/7/7.c.bin` | 12.7 ± 1.4 | 9.6 | 16.2 | 80.12 ± 10.83 |
+| `solutions/7/7.rs.bin` | 35.5 ± 1.1 | 34.3 | 40.2 | 224.57 ± 17.81 |
+| `java -cp solutions/7 Main` | 25.9 ± 0.8 | 25.2 | 32.1 | 163.49 ± 12.92 |
+| `python solutions/7/7.py` | 67.5 ± 0.7 | 66.8 | 70.9 | 426.83 ± 31.45 |
+| `node solutions/7/7.js` | 43.9 ± 2.5 | 42.3 | 65.9 | 277.29 ± 25.53 |
+| `solutions/8/8.c.bin` | 0.2 ± 0.0 | 0.2 | 0.3 | 1.24 ± 0.18 |
+| `solutions/8/8.rs.bin` | 76.2 ± 3.6 | 74.9 | 100.1 | 481.72 ± 41.72 |
+| `java -cp solutions/8 Main` | 20.7 ± 0.5 | 20.0 | 24.3 | 130.58 ± 10.02 |
+| `python solutions/8/8.py` | 10.1 ± 0.9 | 9.6 | 17.1 | 63.83 ± 7.56 |
+| `node solutions/8/8.js` | 35.9 ± 1.2 | 34.8 | 43.9 | 226.69 ± 18.21 |
+| `solutions/9/9.c.bin` | 1.6 ± 0.0 | 1.6 | 1.8 | 10.34 ± 0.79 |
+| `solutions/9/9.rs.bin` | 2.6 ± 0.5 | 2.3 | 4.3 | 16.74 ± 3.50 |
+| `java -cp solutions/9 Main` | 21.0 ± 0.4 | 20.3 | 22.9 | 132.60 ± 9.93 |
+| `python solutions/9/9.py` | 24.4 ± 0.7 | 23.8 | 27.7 | 154.36 ± 11.99 |
+| `node solutions/9/9.js` | 37.6 ± 1.6 | 36.6 | 50.1 | 237.44 ± 20.19 |
 
 ## Credits
 
