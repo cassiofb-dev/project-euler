@@ -3,7 +3,7 @@ import os, sys, subprocess
 class SolutionRunner:
 
     def __init__(self, enable_benchmark=False):
-        self.solved_problems = 9
+        self.solved_problems = 10
         self.ran_commands = []
         self.enable_benchmark = enable_benchmark
         self.solution_variations = ["", "_optimized"]
